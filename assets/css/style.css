@@ -1,0 +1,48 @@
+body {
+	background-image: url("../images/green_dust_scratch.png");
+}
+ 
+.jumbotron {
+	text-align: center;
+	text-shadow: 3px 3px green;
+	background-color: #FFF5EE;
+}
+
+h3 {
+	background-color: #FFF5EE;
+	text-align: center;
+	text-shadow: 1px 2px green;
+	line-height: 50px;
+}
+
+#numtomatch,
+#total,
+#score {
+	height: 150px;
+	margin-bottom: 40px;
+	border: 2px solid #FFF5EE;
+}
+
+#win-message,
+#lose-message {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	text-align: center;
+	font-weight: 100px;
+}
+
+#win-message {
+	color: green;
+}
+
+#lose-message {
+	color: red;
+}
+
+
+
+.jewels {
+	padding: 10px;
+	margin: 10px 50px 10px 100px;
+
+}

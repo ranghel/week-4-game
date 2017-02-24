@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Crystal Collector | Game</title>
+	
+	<!-- CSS -->
+ 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ 
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+<!-- Linking jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Crystal Collector</h1>
+		</div>
+
+		<div class="panel panel-success" id="instructions">
+			<div class="panel-heading">
+				<div class="panel-title">How To Play</div>
+			</div>
+
+			<div class="panel-body">
+				<p>
+					You will be given a random number at the start of the game.
+				</p>
+				<p>
+					There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+				</p>
+				<p>
+					You win the game by matching your total score to random number, you have the game if your total score goes above the random number.
+				</p>
+				<p>
+					The value of each crystal is hidden from you until you click on it.
+				</p>
+				<p>
+					Each time when the game starts, the game will change the values of each crystal.
+				</p>
+				
+			</div>
+		</div> <!-- closing instruction div -->
+
+		<br><br>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div id="win-message"></div>
+				<div id="lose-message"></div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-4" id="numtomatch">
+				<h3>Number to Match: <br><span id="randNum"></span></h3>
+			</div>
+
+			<div class="col-md-4" id="total">
+				<h3>Your total score is: <br><span id="addNum"></span></h3>
+			</div>
+
+			<div class="col-md-4" id="score">
+				<h3>Score:</h3>
+				<h4>Wins: <span id="wins"></span></h4>
+				<h4>Losses: <span id="losses"></span></h4>
+			</div>
+		
+		</div>
+	
+
+
+		<div class="panel panel-default" id="images">
+			<div class="panel-body"> 
+				<img src="assets/images/jewel1.jpg" alt="crystalone" class="jewels" id="first"width="100" height="100">
+				<img src="assets/images/jewel2.jpg" alt="crystaltwo" class="jewels" id="second"width="100" height="100">
+				<img src="assets/images/jewel3.jpg" alt="crystalthree" class="jewels" id="third"width="100" height="100">
+				<img src="assets/images/jewel4.jpeg" alt="crystalfour" class="jewels" id="fourth"width="100" height="100">
+			</div>
+		</div>
+
+
+
+	</div>		
+
+	
+</body>
+</html>
