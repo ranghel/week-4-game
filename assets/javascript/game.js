@@ -1,7 +1,6 @@
 // Generate a random number between 19 and 120
 $(document).ready(function(){
 	var computerNum = Math.floor(Math.random() * 102) +19;
-	console.log(computerNum);
 	$("#randNum").text(computerNum);
 
 // Global variables
@@ -9,11 +8,9 @@ $(document).ready(function(){
 	var winsCount = 0;
 	var lossesCount = 0;
 	var totalScore = 0;
-	var winLoss = false;
-	var gameOver = false;
 
 
-// Update Wins and Losses DOM
+// Update DOM
 	$("#wins").text(winsCount);
 	$("#losses").text(lossesCount);
 	$("#addNum").text(totalScore);
@@ -24,15 +21,15 @@ $(document).ready(function(){
 			var num = Math.floor(Math.random() * 12) +1;
 			crystalNumbers.push(num);
 		}
-		console.log(crystalNumbers);
 	}
 
 	crystalRandNumbers();
 
-// Reset the game
-	function gameReset() {
+// Start game
+	function startGame() {
+		$("#win-message").empty();
+		$("#lose-message").empty();
 		computerNum = Math.floor(Math.random() * 102) +19;
-		console.log(computerNum);
 		$("#randNum").text(computerNum);
 		crystalNumbers = [];
 		crystalRandNumbers();
@@ -40,28 +37,37 @@ $(document).ready(function(){
 		$("#addNum").text(totalScore);
 	}
 
-// Win
+// Wins
 	function winner() {
-		//alert("You won!!!");
-		$("#win-message").html("<h2>You Won!!!</h2>").fadeOut(5000);
 		winsCount++;
 		$("#wins").text(winsCount);
-		gameReset();
+		$("#win-message").html("<h2>You Won!!!</h2>");
+		playSounds("assets/sounds/winsound.wav");
+
+		setTimeout(startGame, 3000);
 	}
 
-// Loss
+// Losses
 	function losser() {
-		//alert("You lose!!!");
-		$("#lose-message").html("<h2>You Lost!!!</h2>").fadeOut(5000);
 		lossesCount++;
 		$("#losses").text(lossesCount);
-		gameReset();
+		$("#lose-message").html("<h2>You Lost!!!</h2>");
+		playSounds("assets/sounds/fail-buzzer-01.mp3");
+
+	setTimeout(startGame, 3000);
+
 	}
+
+// Play sounds
+	function playSounds(gameSounds) {
+		var audio = new Audio(gameSounds);
+        audio.play();
+	}
+
 
 // Clicks for crystals
 	$("#first").on("click", function(){
 		totalScore = totalScore + crystalNumbers[0];
-		console.log("New total: " + totalScore);
 		$("#addNum").text(totalScore);
 
 			if (totalScore === computerNum) {
@@ -74,7 +80,6 @@ $(document).ready(function(){
 
 	$("#second").on("click", function(){
 	totalScore = totalScore + crystalNumbers[1];
-	console.log("New total: " + totalScore);
 	$("#addNum").text(totalScore);
 
 		if (totalScore === computerNum) {
@@ -87,7 +92,6 @@ $(document).ready(function(){
 
 	$("#third").on("click", function(){
 	totalScore = totalScore + crystalNumbers[2];
-	console.log("New total: " + totalScore);
 	$("#addNum").text(totalScore);
 
 		if (totalScore === computerNum) {
@@ -100,7 +104,6 @@ $(document).ready(function(){
 
 	$("#fourth").on("click", function(){
 	totalScore = totalScore + crystalNumbers[3];
-	console.log("New total: " + totalScore);
 	$("#addNum").text(totalScore);
 
 		if (totalScore === computerNum) {
